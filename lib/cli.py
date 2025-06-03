@@ -13,25 +13,35 @@ from helpers import (
     get_random_affirmation,
     view_user_history  
 )
+
 def exit_program():
     print("Peace out, code warrior! Keep your variables tight and your spirits high! 🚀")
     exit()
 
 def menu():
     print("\n=== MAIN MENU ===")
-    print("👤 USERS:    List(1) | Add(2)")
-    print("😊 MOODS:    List(3) | Add(4)")
-    print("💖 AFFIRMATIONS: List(5) | Add(6) | Random(11)")
-    print("📝 JOURNALS: List(7) | Add(8)")
-    print("🧠 HISTORY:  User Moods(9) | Add(10) | View(12)")  
+    print("👤 USERS:         List(1) | Add(2)")
+    print("😊 MOODS:         List(3) | Add(4)")
+    print("💖 AFFIRMATIONS:  List(5) | Add(6) | Random(11)")
+    print("📝 JOURNALS:      List(7) | Add(8)")
+    print("🧠 HISTORY:       User Moods(9) | Add(10) | View(12)")  
     print("0. Exit")
 
 def main():
-    print("\n=== Welcome to MindEcho ===")
-    print("The only therapist that:")
-    print("- Runs on Python")
-    print("- Never judges your life choices")
-    print("- Charges 0 bugs/hour\n")
+    print(r"""
+  __  __ _           _ _____     _              
+ |  \/  (_)         | | ____|   | |             
+ | \  / |_ _ __   __| | |__   __| | ___  ___ ___ 
+ | |\/| | | '_ \ / _` |___ \ / _` |/ _ \/ __/ __|
+ | |  | | | | | | (_| |___) | (_| |  __/\__ \__ \
+ |_|  |_|_|_| |_|\__,_|____/ \__,_|\___||___/___/
+
+=== Welcome to MindEcho ===
+The only therapist that:
+- Runs on Python 🐍
+- Never judges your life choices 🧘
+- Charges 0 bugs/hour 🐞
+""")
     while True:
         menu()
         choice = input("> ")
@@ -62,15 +72,14 @@ def main():
         elif choice == "12":
             view_user_history()
         else:
-           print("\n🚨 Invalid choice! Try again.")
-           print("Pro Tip: Numbers work better than feelings here.")
-           print("(But in MindEcho, we validate ALL emotions! 💖)\n")
-           print(r'''
-             ___
-            / _ \  What even was that input?
-           | (_) | 
-            \___/  Try 0-11 like a normal human!
-            ''')
+            print("\n🚨 Invalid choice! Try again.")
+            print("Pro Tip: Numbers work better than feelings here.")
+            print("(But in MindEcho, we validate ALL emotions! 💖)\n")
+            print(r'''
+    (╯°□°）╯︵ ┻━┻  
+    That’s not even a valid option.
+    Try something from 0 to 12!
+''')
 
 if __name__ == "__main__":
     main()

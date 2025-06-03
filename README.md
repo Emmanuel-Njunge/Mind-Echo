@@ -1,6 +1,9 @@
 # MindEcho CLI
 
-A simple command-line interface for the MindEcho affirmation hub.
+MindEcho CLI is a command-line application designed to support mental wellness through positive affirmations. Users interact by selecting their mood, and the system provides uplifting affirmations tailored to their emotional state. The application stores mood history and journal entries in a structured SQLAlchemy ORM database, allowing users to track their personal reflections and emotional patterns over time.
+
+###
+“MindEcho — your emotionally intelligent terminal buddy, powered by Python and powered by your feelings. It logs your moods better than git logs commits — and won’t crash when you do.”
 
 ## Features
 
