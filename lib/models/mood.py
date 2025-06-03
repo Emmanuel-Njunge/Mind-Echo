@@ -11,7 +11,8 @@ class Mood(Base):
     
     
     affirmations = relationship("Affirmation", backref="mood")
-    user_moods = relationship("UserMood", backref="mood")
+    user_moods = relationship("UserMood", back_populates="mood")
+
     
     def __repr__(self):
         return f"Mood(id={self.id}, name={self.name})"

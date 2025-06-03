@@ -10,7 +10,7 @@ class User(Base):
     
  
     journals = relationship("Journal", backref="user")
-    user_moods = relationship("UserMood", backref="user")
+    user_moods = relationship("UserMood", back_populates="user")
     
     def __repr__(self):
         return f"User(id={self.id}, name={self.name})"

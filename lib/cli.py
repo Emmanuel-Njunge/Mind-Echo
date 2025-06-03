@@ -10,10 +10,28 @@ from helpers import (
     create_journal,
     list_user_moods,
     create_user_mood,
-    get_random_affirmation
+    get_random_affirmation,
+    view_user_history  
 )
+def exit_program():
+    print("Peace out, code warrior! Keep your variables tight and your spirits high! 🚀")
+    exit()
+
+def menu():
+    print("\n=== MAIN MENU ===")
+    print("👤 USERS:    List(1) | Add(2)")
+    print("😊 MOODS:    List(3) | Add(4)")
+    print("💖 AFFIRMATIONS: List(5) | Add(6) | Random(11)")
+    print("📝 JOURNALS: List(7) | Add(8)")
+    print("🧠 HISTORY:  User Moods(9) | Add(10) | View(12)")  
+    print("0. Exit")
 
 def main():
+    print("\n=== Welcome to MindEcho ===")
+    print("The only therapist that:")
+    print("- Runs on Python")
+    print("- Never judges your life choices")
+    print("- Charges 0 bugs/hour\n")
     while True:
         menu()
         choice = input("> ")
@@ -41,23 +59,18 @@ def main():
             create_user_mood()
         elif choice == "11":
             get_random_affirmation()
+        elif choice == "12":
+            view_user_history()
         else:
-            print("Invalid choice")
-
-def menu():
-    print("Please select an option:")
-    print("0. Exit the program")
-    print("1. List all users")
-    print("2. Create a new user")
-    print("3. List all moods")
-    print("4. Create a new mood")
-    print("5. List all affirmations")
-    print("6. Create a new affirmation")
-    print("7. List all journals")
-    print("8. Create a new journal")
-    print("9. List all user moods")
-    print("10. Create a new user mood")
-    print("11. Get random affirmation for mood")
+           print("\n🚨 Invalid choice! Try again.")
+           print("Pro Tip: Numbers work better than feelings here.")
+           print("(But in MindEcho, we validate ALL emotions! 💖)\n")
+           print(r'''
+             ___
+            / _ \  What even was that input?
+           | (_) | 
+            \___/  Try 0-11 like a normal human!
+            ''')
 
 if __name__ == "__main__":
     main()

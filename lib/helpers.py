@@ -21,7 +21,49 @@ def create_user():
     user = User(name=name)
     session.add(user)
     session.commit()
-    print(f"User {name} created!")
+    print(f"\nUser '{name}' created! Welcome aboard, emotionally available coder! 💻✨")
+    print(random.choice([
+        "Your commit history is beautiful today!",
+        "We added you to the database of awesome people!",
+        "User initialized with 100% happiness potential!"
+    ]))
+def view_user_history():
+    user_id = input("Enter user ID: ")
+    user = session.get(User, user_id)
+    if not user:
+        print("❌ User not found!")
+        return
+
+    print(f"\n=== {user.name}'s Mental Health Log ===")
+
+    print("\n📝 Journals:")
+    if user.journals:
+        for journal in user.journals:
+            print(f"- {journal.entry[:50]}...")
+    else:
+        print("No journal entries.")
+
+    print("\n😊 Mood History:")
+    if user.user_moods:
+        for um in user.user_moods:
+            mood_name = um.mood.name if um.mood and um.mood.name else "Unknown Mood"
+            notes = um.notes if um.notes else "(no notes)"
+            print(f"- Felt {mood_name}: '{notes}'")
+    else:
+        print("No moods logged.")
+
+    print("\n💖 Affirmations Received:")
+    moods = {um.mood_id for um in user.user_moods}
+    if moods:
+        for mood_id in moods:
+            mood = session.get(Mood, mood_id)
+            affirmations = session.query(Affirmation).filter_by(mood_id=mood_id).all()
+            print(f"For mood '{mood.name}':")
+            for affirmation in affirmations:
+                print(f"- {affirmation.text}")
+    else:
+        print("No affirmations found.")
+
 
 # Mood functions
 def list_moods():
